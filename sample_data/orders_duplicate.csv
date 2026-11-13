@@ -1,0 +1,4 @@
+order_id,customer_code,order_date,product_code,quantity,unit_price
+A0001,C001,2026/11/02,P100,10,500
+D0001,C006,2026/11/09,P600,7,300
+D0001,C006,2026/11/09,P600,8,300
