@@ -41,7 +41,8 @@
     ├── 04_handson3_impact_analysis.md ハンズオン③:既存ソース解析・変更影響
     ├── 05_diff_review_checklist.md    差分レビュー観点
     ├── 06_prompt_examples.md          「指示・比較・検証」プロンプト例
-    └── 07_reflection_and_next.md      振り返りシート・研修後の導線
+    ├── 07_reflection_and_next.md      振り返りシート・研修後の導線
+    └── 08_current_design.md           現行ソースから整理した設計・処理フロー
 ```
 
 ## セットアップ
@@ -65,7 +66,12 @@ java -cp target/csv-import.jar com.example.csvimport.Report 202611
 - 1行ごとに検証し、エラー行は `import_errors.log` に出力してスキップ、正常行をSQLiteへ登録
 - 日付は `YYYY/MM/DD` で受け取り、DBには `YYYY-MM-DD` で保存
 - 登録は最後に1回コミットする(途中で例外が出ると、そのファイルの分は全て未登録になる)
-- 終了コードは常に 0
+- 検証エラー行があっても正常行は処理し、通常終了時の終了コードは 0
+- 引数が不正な場合は終了コード 64。ファイルI/OやDB例外は未処理のまま終了する
+
+## 現行設計
+
+クラスごとの責務、CSV取込の処理順、DB構造、トランザクション、終了コード、月次レポートとの関係は[現行設計](docs/08_current_design.md)を参照してください。現行のソースとテストから確認した内容であり、改修後の仕様ではありません。
 
 ## 現行バッチの既知の課題(ハンズオンで扱う)
 
