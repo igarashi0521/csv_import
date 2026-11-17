@@ -3,8 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/maven:1": { "version": "3.9" },
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
-    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
   },
   "customizations": {
     "vscode": {
@@ -14,5 +13,5 @@
       ]
     }
   },
-  "postCreateCommand": "mvn -q -DskipTests dependency:resolve"
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && mvn -q -DskipTests dependency:resolve"
 }
