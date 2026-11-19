@@ -42,12 +42,15 @@
     ├── 05_diff_review_checklist.md    差分レビュー観点
     ├── 06_prompt_examples.md          「指示・比較・検証」プロンプト例
     ├── 07_reflection_and_next.md      振り返りシート・研修後の導線
-    └── 08_current_design.md           現行ソースから整理した設計・処理フロー
+    ├── 08_current_design.md           現行ソースから整理した設計・処理フロー
+    └── 09_codespaces_guide.md         Codespacesの起動・画面操作
 ```
 
 ## セットアップ
 
 JDK 17 以降と Maven 3.9 以降が必要です。初回のビルド時に Maven Central から依存ライブラリを取得します。
+
+GitHub Codespacesで受講する場合は、[Codespaces利用手順](docs/09_codespaces_guide.md)を参照してください。
 
 ```sh
 mvn test           # 現行の単体テストを実行(全件成功する)
